@@ -85,8 +85,8 @@ class Avatar
         if ($strFile == '') {
             return '';
         }
-        $objUser = \MemberModel::findByPk($intId);
-        $alt = empty($objUser->position) ? 'Member Avatar' : $objUser->position;
+        $objMember = \MemberModel::findByPk($intId);
+        $alt = empty($objMember->position) ? 'Member Avatar' : $objMember->position;
         // Gravatar
         if (stripos($strFile, 'gravatar.com') !== false) {
 
@@ -166,9 +166,8 @@ class Avatar
         if ($strFile == '') {
             return '';
         }
-        $objUser = \MemberModel::findByPk($intId);
-        $alt = empty($objUser->position) ? 'Member Avatar' : $objUser->position;
-
+        $objUser = \UserModel::findByPk($intId);
+        $alt = empty($objUser->name) ? 'User Avatar' : $objUser->name;
         // Gravatar
         if (stripos($strFile, 'gravatar.com') !== false) {
 
