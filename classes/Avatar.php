@@ -166,8 +166,7 @@ class Avatar
         if ($strFile == '') {
             return '';
         }
-        $objUser = \UserModel::findByPk($intId);
-        $alt = empty($objUser->name) ? 'User Avatar' : $objUser->name;
+        $alt = 'User Avatar';
         // Gravatar
         if (stripos($strFile, 'gravatar.com') !== false) {
 
